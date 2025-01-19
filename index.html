@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="firstPage">
+        <div class="fullscreen" id="screen1">Special Birthday wish for my JIGERRR "SIRAJ"😊</div>
+        <div class="quote" id="screen2">
+            "Happy Birthday to one of the most amazing people in my life! 🎉
+
+            Your friendship is one of the greatest gifts I’ve ever received, and I can’t thank you enough for all the
+            joy,
+            laughter, and support you’ve brought into my world. Whether it’s celebrating our wins or navigating life’s
+            challenges, you’ve always been by my side, and I’m so grateful for that.
+
+            As you step into another year, I wish you endless adventures, boundless success, and every dream in your
+            heart
+            coming true. Let’s make even more unforgettable memories together this year.
+
+            Have the happiest birthday ever, my friend! You deserve nothing but the best. 🎂🎁💖"
+        </div>
+        <div class="photo-container" id="photoContainer">
+            <!-- Images for the slideshow -->
+            <img src="Photo gallary.png" alt="Photo 1" class="active">
+            <img src="s 2.jpg" alt="Photo 2">
+            <img src="s 3.jpg" alt="Photo 3">
+            <img src="s 4.jpg" alt="Photo 4">
+            <img src="s 5.jpg" alt="Photo 5">
+            <img src="s 1.jpg" alt="Photo 6">
+        </div>
+    </div>
+    <div class="secondPage SPisHIDDENint" id="secondPage">
+        <div class="upperPart" id="section1">
+            <h1>Happy Birthday to one of the most amazing people in my life! 🎉</h1>
+        </div>
+        <div class="middlePart" id="section2">
+            <p> "Your friendship is one of the greatest gifts I’ve ever received, and I can’t thank you enough for all
+                the joy,
+                laughter, and support you’ve brought into my world. Whether it’s celebrating our wins or navigating
+                life’s
+                challenges, you’ve always been by my side, and I’m so grateful for that.
+
+                As you step into another year, I wish you endless adventures, boundless success, and every dream in your
+                heart
+                coming true. Let’s make even more unforgettable memories together this year.
+
+                Have the happiest birthday ever, my friend! You deserve nothing but the best. 🎂🎁💖"</p>
+        </div>
+        <br>
+        <br>
+        <div class="lowerPart" id="section3">
+            <p>Write a beautifull Note, wish or any thing you wanna say to my Friend</p>
+            <input type="text" placeholder="Write Your Thoughts Here...">
+            <button>Submit</button>
+        </div>
+        <div class="playQuiz">
+            <h2>Play quiz game and know how much do you know about SIRAJ</h2>
+            <button id="startQuiz">Play Qiuz</button>
+        </div>
+    </div>
+    <script>
+        // Select all the images inside the photo container
+        const photos = document.querySelectorAll(".photo-container img");
+        let currentPhotoIndex = 0; // Tracks the currently displayed photo
+
+        function showNextPhoto() {
+            // Hide the current photo
+            photos[currentPhotoIndex].classList.remove("active");
+            currentPhotoIndex++; // Move to the next photo
+
+            // Check if there are more photos to show
+            if (currentPhotoIndex < photos.length) {
+                // Show the next photo
+                photos[currentPhotoIndex].classList.add("active");
+                // Schedule the next photo change after 2 seconds
+                setTimeout(showNextPhoto, 3000);
+            }
+        }
+        // Delay before starting the photo slideshow
+        setTimeout(() => {
+            document.querySelector(".photo-container").style.opacity = 1; // Make the photo container visible
+            showNextPhoto(); // Start the slideshow
+        }, 18000); // Start slideshow 20 seconds after page load
+
+
+        // second page
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondPage = document.getElementById('secondPage');
+            const quizButton = document.getElementById('startQuiz'); // Select the button
+
+            // Show Second Page
+            setTimeout(() => {
+                secondPage.classList.remove('SPisHIDDENint');
+                secondPage.classList.add('showSPnow');
+            }, 36000);
+
+            setTimeout(() => {
+                const lowerPart = document.querySelector('.lowerPart');
+                lowerPart.classList.remove('hidden');
+                lowerPart.classList.add('visible');
+            }, 35000);
+
+            // Add event listener for the quiz button
+            quizButton.addEventListener('click', () => {
+                // Redirect to the quiz page
+                window.location.href = "quiz.html"; // Replace "quiz.html" with your quiz page URL
+            });
+        });
+
+    </script>
+</body>
+
+</html>
